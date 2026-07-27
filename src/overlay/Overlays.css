@@ -1,0 +1,519 @@
+/* ------------------------------------------------------------------ */
+/*  Overlay layers — information discovered along the route            */
+/* ------------------------------------------------------------------ */
+
+.ovl {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  align-items: center;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.ovl--center { justify-items: center; text-align: center; }
+.ovl--left   { justify-items: start; padding-left: clamp(1.5rem, 9vw, 11rem); }
+.ovl--right  { justify-items: end; padding-right: clamp(1.5rem, 9vw, 11rem); }
+
+.ovl__inner { max-width: min(520px, 86vw); }
+.ovl--center .ovl__inner { max-width: min(720px, 90vw); }
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.34em;
+  color: rgba(214, 228, 248, 0.62);
+  margin-bottom: 1.1rem;
+}
+
+/* --- Arrival -------------------------------------------------------- */
+
+.arrival__title {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-style: italic;
+  font-size: clamp(3rem, 9vw, 6.5rem);
+  line-height: 1.02;
+  color: #eef3fb;
+  text-shadow: 0 2px 40px rgba(4, 7, 15, 0.8);
+  margin-bottom: 0.7rem;
+}
+
+/* The festival slogan — the loudest line on the opening screen. */
+.arrival__slogan {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(1.4rem, 3.4vw, 2.5rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #ffd0a0;
+  margin-bottom: 1.4rem;
+  text-shadow: 0 2px 24px rgba(4, 7, 15, 0.9);
+}
+
+.arrival__sub {
+  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+  line-height: 1.7;
+  color: rgba(214, 228, 248, 0.78);
+}
+
+/* --- Waypoint markers ------------------------------------------------ */
+
+.marker {
+  border-left: 1px solid rgba(214, 228, 248, 0.28);
+  padding: 0.4rem 0 0.4rem 1.6rem;
+  text-shadow: 0 1px 24px rgba(4, 7, 15, 0.9);
+}
+
+.marker--stone {
+  border-left: none;
+  border-top: 1px solid rgba(214, 228, 248, 0.25);
+  border-bottom: 1px solid rgba(214, 228, 248, 0.12);
+  padding: 1.5rem 0.4rem;
+}
+
+.marker__title {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+  line-height: 1.12;
+  color: #eef3fb;
+  margin-bottom: 1rem;
+}
+
+.marker__title em { font-style: italic; color: #bcd2ef; }
+
+.marker__body {
+  font-size: clamp(0.92rem, 1.4vw, 1.02rem);
+  line-height: 1.75;
+  color: rgba(214, 228, 248, 0.82);
+}
+
+.marker--note .marker__body {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+}
+
+.paw-trail {
+  display: flex;
+  gap: 1.3rem;
+  margin-top: 1.4rem;
+}
+
+.paw {
+  width: 22px;
+  height: 22px;
+  fill: rgba(214, 228, 248, 0.8);
+}
+
+/* --- Expedition records ---------------------------------------------- */
+
+.records {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 2.5rem;
+}
+
+.records dt {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+  color: #eef3fb;
+  line-height: 1;
+}
+
+.records dd {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(214, 228, 248, 0.55);
+  margin-top: 0.45rem;
+}
+
+/* --- The spirit ------------------------------------------------------- */
+
+.spirit__line {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  line-height: 1.45;
+  color: #eef3fb;
+  text-shadow: 0 1px 30px rgba(4, 7, 15, 0.9);
+}
+
+.spirit__line em { color: #bcd2ef; }
+
+/* --- Our Cause -------------------------------------------------------- */
+
+.cause__line {
+  font-family: var(--font-serif);
+  font-size: clamp(1.3rem, 2.7vw, 2rem);
+  line-height: 1.4;
+  color: #eef3fb;
+  text-shadow: 0 1px 30px rgba(4, 7, 15, 0.9);
+  margin-bottom: 1rem;
+}
+
+.cause__line em {
+  color: #bcd2ef;
+  font-style: italic;
+}
+
+.cause__body {
+  font-size: clamp(0.9rem, 1.5vw, 1.02rem);
+  line-height: 1.7;
+  color: rgba(224, 234, 250, 0.85);
+  max-width: 540px;
+  margin: 0 auto;
+  text-shadow: 0 1px 16px rgba(4, 7, 15, 0.85);
+}
+
+/* --- Checkpoints ------------------------------------------------------ */
+
+.checkpoint {
+  position: relative;
+  border: 1px solid rgba(214, 228, 248, 0.2);
+  padding: 1.6rem 1.8rem 1.5rem;
+  background: linear-gradient(160deg, rgba(8, 13, 24, 0.46), rgba(8, 13, 24, 0.18));
+  -webkit-backdrop-filter: blur(7px) saturate(0.9);
+  backdrop-filter: blur(7px) saturate(0.9);
+  max-width: 420px;
+}
+
+.checkpoint::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 9px;
+  height: 9px;
+  border-top: 1px solid rgba(214, 228, 248, 0.6);
+  border-left: 1px solid rgba(214, 228, 248, 0.6);
+}
+
+.checkpoint__title {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+  color: #eef3fb;
+  margin-bottom: 0.5rem;
+}
+
+.checkpoint__desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(214, 228, 248, 0.72);
+  margin-bottom: 1.2rem;
+}
+
+.checkpoint__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.1rem;
+}
+
+.checkpoint__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #8ef0c8;
+  background: rgba(12, 28, 22, 0.5);
+  border: 1px solid rgba(142, 240, 200, 0.4);
+  padding: 0.45rem 0.85rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.checkpoint__link:hover {
+  background: #8ef0c8;
+  color: #030817;
+  border-color: #8ef0c8;
+  transform: translateY(-1px);
+}
+
+.stamp {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  color: rgba(214, 228, 248, 0.7);
+  border: 1px dashed rgba(214, 228, 248, 0.4);
+  padding: 0.45rem 0.9rem;
+  transform: rotate(-2deg);
+}
+
+.stamp--accent {
+  color: #ffc890;
+  border-color: rgba(255, 200, 144, 0.5);
+}
+
+.checkpoint__enter {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  color: #ffc890;
+  background: transparent;
+  border: 1px solid rgba(255, 200, 144, 0.45);
+  padding: 0.55rem 1rem;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s, transform 0.25s;
+}
+
+.checkpoint__enter:hover {
+  background: rgba(255, 200, 144, 0.12);
+  border-color: rgba(255, 200, 144, 0.85);
+  transform: translateY(-1px);
+}
+
+/* --- Ice ridge --------------------------------------------------------- */
+
+.ridgeline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.6rem, 4vw, 3rem);
+  color: #eef3fb;
+  text-shadow: 0 2px 36px rgba(4, 7, 15, 0.95);
+}
+
+.ridgeline--small { font-size: clamp(1.1rem, 2.4vw, 1.7rem); opacity: 0.85; }
+
+/* --- Summit ------------------------------------------------------------- */
+
+.ovl--summit { z-index: 6; }
+
+.summit {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 2rem 1rem;
+  max-height: 100vh;
+}
+
+/* One large, soft pool of darkness so the content reads against the sunrise.
+   It extends well beyond the text (negative inset) so the fade happens off in
+   the sky, not at a visible edge near the words — dark centre, no box. Pure
+   gradient: no backdrop-filter, so it renders identically on every GPU and at
+   any aspect ratio (portrait as well as landscape). */
+.summit::before {
+  content: '';
+  position: absolute;
+  inset: -55% -42%;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 48% 52% at 50% 50%,
+    rgba(4, 6, 14, 0.9) 0%,
+    rgba(4, 6, 14, 0.78) 34%,
+    rgba(4, 6, 14, 0.5) 54%,
+    rgba(4, 6, 14, 0.22) 72%,
+    rgba(4, 6, 14, 0.06) 86%,
+    rgba(4, 6, 14, 0) 94%
+  );
+}
+
+.summit > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Against the bright sunrise the secondary lines step up to full presence. */
+.summit .tag {
+  color: rgba(236, 244, 254, 0.98);
+  text-shadow: 0 1px 4px rgba(4, 6, 14, 0.85), 0 3px 16px rgba(4, 6, 14, 0.7);
+}
+
+.leopard {
+  width: clamp(220px, 36vh, 340px);
+  overflow: visible;
+}
+
+.leopard path {
+  fill: none;
+  stroke: rgba(206, 240, 255, 0.92);
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 10px rgba(140, 220, 255, 0.8));
+}
+
+.leopard__dot {
+  fill: #dff2ff;
+  filter: drop-shadow(0 0 4px rgba(170, 230, 255, 0.9));
+}
+
+.leopard__spot { fill: rgba(194, 236, 255, 0.6); }
+
+.leopard__eye {
+  fill: #fff;
+  filter: drop-shadow(0 0 8px rgba(190, 240, 255, 1));
+  animation: eye-pulse 3.2s ease-in-out infinite;
+}
+
+@keyframes eye-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+.summit__title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(2.6rem, 8vw, 5.4rem);
+  letter-spacing: 0.06em;
+  line-height: 1;
+  color: #fbf6ec;
+  text-shadow:
+    0 2px 8px rgba(4, 6, 14, 0.85),
+    0 5px 26px rgba(4, 6, 14, 0.75),
+    0 0 60px rgba(4, 6, 14, 0.55);
+}
+
+.summit__meta {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: rgba(248, 242, 232, 0.95);
+  text-align: center;
+  margin-bottom: 0.9rem;
+  text-shadow: 0 1px 3px rgba(4, 6, 14, 0.7), 0 3px 14px rgba(4, 6, 14, 0.55);
+}
+
+.summit__countdown {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  justify-content: center;
+}
+
+.summit__unit { display: flex; align-items: baseline; gap: 0.9rem; }
+
+.summit__value {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  color: #f9f2e6;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 2px 6px rgba(4, 6, 14, 0.85), 0 5px 22px rgba(4, 6, 14, 0.65);
+}
+
+.summit__unit-label {
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.24em;
+  color: rgba(248, 242, 232, 0.85);
+  margin-left: 0.35rem;
+  text-shadow: 0 1px 3px rgba(4, 6, 14, 0.7);
+}
+
+.summit__sep { color: rgba(245, 236, 223, 0.45); font-size: 1.4rem; }
+
+.summit__cta {
+  font-size: 0.95rem;
+  color: rgba(250, 245, 236, 0.96);
+  text-align: center;
+  margin-bottom: 0.8rem;
+  text-shadow: 0 1px 3px rgba(4, 6, 14, 0.7), 0 3px 14px rgba(4, 6, 14, 0.5);
+}
+
+.summit__form {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.summit__form input {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  background: rgba(8, 13, 24, 0.55);
+  border: 1px solid rgba(245, 236, 223, 0.3);
+  color: #f5ecdf;
+  padding: 0.75rem 1.1rem;
+  min-width: 240px;
+  outline: none;
+  transition: border-color 0.25s;
+}
+
+.summit__form input:focus { border-color: rgba(255, 200, 144, 0.8); }
+.summit__form input::placeholder { color: rgba(245, 236, 223, 0.35); }
+
+.summit__form button {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  background: #f2a472;
+  color: #14110c;
+  border: none;
+  padding: 0.75rem 1.4rem;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.2s;
+}
+
+.summit__form button:hover { background: #ffc890; transform: translateY(-1px); }
+
+.summit__manifest {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #ffc890;
+  text-align: center;
+}
+
+.summit__links {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.4rem;
+}
+
+.summit__link {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(248, 242, 232, 0.92);
+  background: none;
+  border: 1px solid rgba(248, 242, 232, 0.32);
+  padding: 0.6rem 1.3rem;
+  cursor: pointer;
+  transition: background 0.25s, border-color 0.25s;
+  text-shadow: 0 1px 6px rgba(4, 6, 14, 0.7);
+}
+
+.summit__link:hover {
+  background: rgba(248, 242, 232, 0.12);
+  border-color: rgba(248, 242, 232, 0.7);
+}
+
+.summit__foot {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  color: rgba(248, 242, 232, 0.72);
+  text-align: center;
+  margin-top: 1rem;
+  text-shadow: 0 1px 3px rgba(4, 6, 14, 0.65);
+}
+
+.summit__foot + .summit__foot {
+  margin-top: 0.35rem;
+}
+
+.summit__contact-link {
+  color: #ffcf9c;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 207, 156, 0.4);
+}
+
+.summit__contact-link:hover {
+  border-bottom-color: #ffcf9c;
+}
+
+@media (max-width: 640px) {
+  .ovl--left, .ovl--right { padding-left: 1.4rem; padding-right: 1.4rem; justify-items: start; }
+  .records { gap: 1.1rem 1.4rem; }
+  .leopard { width: clamp(180px, 28vh, 240px); }
+}
