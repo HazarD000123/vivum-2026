@@ -9,7 +9,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.1rem clamp(1.4rem, 4vw, 3rem);
-  z-index: 10;
+  z-index: 40;
   pointer-events: none;
 }
 
@@ -53,7 +53,7 @@
   left: clamp(0.9rem, 2.4vw, 2rem);
   top: 50%;
   transform: translateY(-50%);
-  z-index: 10;
+  z-index: 40;
 }
 
 .hud__track {
@@ -144,9 +144,9 @@
   align-items: baseline;
   gap: 1.1rem;
   padding: 1.4rem clamp(1.4rem, 4vw, 3rem);
-  z-index: 10;
+  z-index: 40;
   pointer-events: none;
-  mix-blend-mode: screen;
+  text-shadow: 0 1px 10px rgba(4, 8, 16, 0.7);
 }
 
 .hud__alt {
@@ -173,7 +173,7 @@
   flex-direction: column;
   align-items: center;
   gap: 0.8rem;
-  z-index: 10;
+  z-index: 40;
   pointer-events: none;
 }
 

@@ -57,7 +57,7 @@ body {
 .grade-grain {
   position: fixed;
   inset: -100px;
-  z-index: 30;
+  z-index: 3;
   pointer-events: none;
   opacity: 0.05;
   mix-blend-mode: overlay;
