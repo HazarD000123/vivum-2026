@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "exit 0",
-    "build:local": "rm -rf dist && tsc && vite build && node scripts/sync-dist.js",
+    "build:local": "cp index.html.template index.html 2>/dev/null || true; rm -rf dist && tsc && vite build && node scripts/sync-dist.js",
     "preview": "vite preview"
   },
   "dependencies": {
