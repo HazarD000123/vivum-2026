@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { navigate } from '../router'
+import { goBackToAscent } from '../router'
 import './ContactPage.css'
 
 export default function ContactPage({ onReady }: { onReady?: () => void }) {
@@ -39,7 +39,7 @@ export default function ContactPage({ onReady }: { onReady?: () => void }) {
           >
             📷 @vivum_26
           </a>
-          <button className="cp-top__exit" onClick={() => navigate('expedition')}>
+          <button className="cp-top__exit" onClick={() => goBackToAscent()}>
             ↩ RETURN TO THE ASCENT
           </button>
         </div>

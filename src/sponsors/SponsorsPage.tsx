@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { navigate } from '../router'
+import { goBackToAscent } from '../router'
 import { TIERS, type Sponsor } from './sponsors'
 import './Sponsors.css'
 
@@ -66,7 +66,7 @@ export default function SponsorsPage({ onReady }: { onReady?: () => void }) {
           >
             📷 @vivum_26
           </a>
-          <button className="sp-top__exit" onClick={() => navigate('expedition')}>
+          <button className="sp-top__exit" onClick={() => goBackToAscent()}>
             ↩ RETURN TO THE ASCENT
           </button>
         </div>

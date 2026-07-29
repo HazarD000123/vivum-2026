@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import type { CSSProperties } from 'react'
-import { navigate } from '../../router'
+import { goBackToAscent } from '../../router'
 import type { Region, RegionLocation } from '../data'
 import type { RegionPhase } from '../RegionApp'
 import './RegionOverlay.css'
@@ -46,7 +46,7 @@ export default function RegionOverlay({
         <span className="rg-top__name">
           {region.name} — {region.worldName.toUpperCase()}
         </span>
-        <button className="rg-top__exit" onClick={() => navigate('expedition')}>
+        <button className="rg-top__exit" onClick={() => goBackToAscent()}>
           ↩ RETURN TO THE ASCENT
         </button>
       </header>

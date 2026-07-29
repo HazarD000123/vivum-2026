@@ -35,7 +35,14 @@ function Root() {
     const onNavigate = (e: Event) => {
       setVeiled(true)
       setTimeout(() => {
-        window.location.hash = (e as CustomEvent<string>).detail
+        const detail = (e as CustomEvent<string>).detail
+        if (!detail || detail === 'ascent' || detail === 'expedition') {
+          window.location.hash = ''
+        } else if (detail.startsWith('/')) {
+          window.location.hash = detail
+        } else {
+          window.location.hash = `/${detail}`
+        }
       }, VEIL_MS)
     }
     const onHash = () => {
