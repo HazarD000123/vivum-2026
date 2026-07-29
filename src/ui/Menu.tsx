@@ -17,6 +17,7 @@ export default function Menu({ onOpenContact }: { onOpenContact?: () => void }) 
   const firstItem = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
+    document.body.classList.toggle('menu-is-open', open)
     if (!open) return
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setOpen(false)
@@ -24,7 +25,10 @@ export default function Menu({ onOpenContact }: { onOpenContact?: () => void }) 
     window.addEventListener('keydown', onKey)
     // Move focus into the panel for keyboard users.
     firstItem.current?.focus()
-    return () => window.removeEventListener('keydown', onKey)
+    return () => {
+      window.removeEventListener('keydown', onKey)
+      document.body.classList.remove('menu-is-open')
+    }
   }, [open])
 
   const jumpTo = (p: number) => {

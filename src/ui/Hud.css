@@ -82,6 +82,13 @@
   gap: 0.8rem;
   pointer-events: auto;
   margin-right: 4.2rem;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+body.menu-is-open .hud__top-actions {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
 }
 
 .hud__social-link {
