@@ -12,7 +12,7 @@ export function regionIdFromHash(): string | null {
 }
 
 // Static pages that live beside the region worlds on the same hash scheme.
-const PAGES = new Set(['sponsors'])
+const PAGES = new Set(['sponsors', 'contact'])
 
 export function pageIdFromHash(): string | null {
   const h = window.location.hash

@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import { MotionValue, motion, useMotionValueEvent, useTransform } from 'framer-motion'
 import { STAGES, altitudeAt, journey, stageIndexAt } from '../journey'
+import { navigate } from '../router'
 import Menu from './Menu'
 import './Hud.css'
 
@@ -58,13 +59,13 @@ export default function Hud({ progress }: { progress: MotionValue<number> }) {
             </svg>
             <span className="hud__social-text">@vivum_26</span>
           </a>
-          <button className="hud__contact-btn" onClick={() => setContactOpen(true)}>
+          <button className="hud__contact-btn" onClick={() => navigate('contact')}>
             Contact Us
           </button>
         </div>
       </header>
 
-      <Menu onOpenContact={() => setContactOpen(true)} />
+      <Menu />
 
       <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
 

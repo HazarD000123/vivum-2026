@@ -1,0 +1,262 @@
+/* Dedicated Contact Us Page */
+
+.contact-page {
+  position: relative;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 120% 70% at 50% -10%, #14233f 0%, transparent 60%),
+    linear-gradient(to bottom, #04070f, #060b16 60%, #04070f);
+  color: #eef3fb;
+}
+
+.cp-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem clamp(1.4rem, 4vw, 3rem);
+}
+
+.cp-top__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.cp-top__wordmark {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+}
+
+.cp-top__divider {
+  color: rgba(214, 228, 248, 0.3);
+  font-size: 0.85rem;
+}
+
+.cp-top__tisb-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: #f6ba82;
+  transition: opacity 0.25s, transform 0.2s;
+}
+
+.cp-top__tisb-link:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.cp-top__tisb-logo {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+}
+
+.cp-top__tisb-text {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+}
+
+.cp-top__right {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.cp-top__insta-link {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: rgba(238, 243, 251, 0.85);
+  background: rgba(16, 26, 48, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(214, 228, 248, 0.22);
+  padding: 0.55rem 0.9rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: border-color 0.25s, color 0.25s, background 0.25s, transform 0.2s;
+}
+
+.cp-top__insta-link:hover {
+  border-color: #e1306c;
+  color: #ffffff;
+  background: rgba(225, 48, 108, 0.2);
+  transform: translateY(-1px);
+}
+
+.cp-top__exit {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.24em;
+  color: rgba(214, 228, 248, 0.75);
+  background: rgba(16, 26, 48, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(214, 228, 248, 0.22);
+  padding: 0.55rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border-color 0.25s, color 0.25s, transform 0.2s;
+}
+
+.cp-top__exit:hover {
+  border-color: rgba(214, 228, 248, 0.6);
+  color: #eef3fb;
+  transform: translateY(-1px);
+}
+
+.cp-main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: clamp(1rem, 4vw, 3rem) clamp(1.4rem, 4vw, 2rem) 4rem;
+}
+
+.cp-card {
+  background: radial-gradient(130% 80% at 50% 0%, rgba(18, 28, 52, 0.92) 0%, rgba(7, 12, 24, 0.95) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 20px;
+  padding: clamp(1.6rem, 5vw, 2.6rem);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  text-align: left;
+}
+
+.cp-card__header {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.8rem;
+  padding-bottom: 1.4rem;
+  border-bottom: 1px solid rgba(214, 228, 248, 0.14);
+}
+
+.cp-card__logo {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+}
+
+.cp-card__tag {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.28em;
+  color: #f6ba82;
+  margin-bottom: 0.3rem;
+}
+
+.cp-card__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: 600;
+  margin: 0;
+}
+
+.cp-card__body {
+  display: grid;
+  gap: 1.6rem;
+}
+
+.cp-label {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.26em;
+  color: rgba(214, 228, 248, 0.5);
+  margin-bottom: 0.6rem;
+  margin-top: 0;
+}
+
+.cp-address {
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: rgba(238, 243, 251, 0.9);
+  margin-bottom: 1rem;
+}
+
+.cp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.85rem 1.2rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(214, 228, 248, 0.18);
+  color: #eef3fb;
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  transition: background 0.25s, border-color 0.25s, transform 0.2s;
+}
+
+.cp-btn:hover {
+  background: rgba(246, 186, 130, 0.18);
+  border-color: #f6ba82;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.cp-btn--insta:hover {
+  background: rgba(225, 48, 108, 0.2);
+  border-color: #e1306c;
+}
+
+.cp-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.cp-info-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(214, 228, 248, 0.1);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.cp-info-title {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.2em;
+  color: rgba(214, 228, 248, 0.45);
+  margin-bottom: 0.4rem;
+}
+
+.cp-link {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  color: #f6ba82;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.cp-link:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+.cp-socials {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.cp-foot {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  color: rgba(214, 228, 248, 0.4);
+  margin-top: 2rem;
+  text-align: center;
+  line-height: 1.8;
+}
+
+@media (max-width: 540px) {
+  .cp-info-grid {
+    grid-template-columns: 1fr;
+  }
+}

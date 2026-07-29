@@ -11,7 +11,7 @@ import './Menu.css'
 
 const REGION_ORDER = ['sports', 'cultural', 'radioshack'] as const
 
-export default function Menu({ onOpenContact }: { onOpenContact?: () => void }) {
+export default function Menu() {
   const [open, setOpen] = useState(false)
   const panelId = useId()
   const firstItem = useRef<HTMLButtonElement>(null)
@@ -107,10 +107,7 @@ export default function Menu({ onOpenContact }: { onOpenContact?: () => void }) 
           <li>
             <button
               className="menu__item"
-              onClick={() => {
-                setOpen(false)
-                onOpenContact?.()
-              }}
+              onClick={() => enter('contact')}
               tabIndex={open ? 0 : -1}
             >
               <span className="menu__item-name">Contact Us</span>

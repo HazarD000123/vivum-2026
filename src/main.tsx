@@ -11,6 +11,7 @@ import './index.css'
 // immersive ascent or a region world is actually shown. Reduced-motion users
 // land on the lite page and never download the 3D engine at all.
 import SponsorsPage from './sponsors/SponsorsPage'
+import ContactPage from './contact/ContactPage'
 
 const App = lazy(() => import('./App'))
 const RegionApp = lazy(() => import('./worlds/RegionApp'))
@@ -65,9 +66,9 @@ function Root() {
   const region = regionId ? REGIONS[regionId] : null
 
   let content
-  // Sponsors is a static page — safe for lite visitors too, so it wins over
-  // the lite check and returning from it lands back in their chosen mode.
+  // Sponsors & Contact are static pages — safe for lite visitors too.
   if (pageId === 'sponsors') content = <SponsorsPage onReady={onReady} />
+  else if (pageId === 'contact') content = <ContactPage onReady={onReady} />
   else if (lite) content = <LiteApp onReady={onReady} />
   else if (region) content = <RegionApp key={region.id} region={region} onReady={onReady} />
   else content = <App onReady={onReady} />
