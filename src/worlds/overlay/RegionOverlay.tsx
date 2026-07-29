@@ -140,9 +140,11 @@ export default function RegionOverlay({
                 ))}
               </div>
             )}
-            <span className={`stamp${loc.registrationOpen ? ' stamp--accent' : ''}`}>
-              {loc.registration}
-            </span>
+            {loc.registrationOpen && (
+              <span className="stamp stamp--accent">
+                {loc.registration}
+              </span>
+            )}
             <div className="rg-log__nav">
               <button onClick={() => step(-1)}>← PREV</button>
               <button className="rg-log__back" onClick={() => onTravel(null)}>

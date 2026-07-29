@@ -204,9 +204,11 @@ function EventModal({ loc, onClose }: { loc: RegionLocation | null; onClose: () 
             ))}
           </div>
         )}
-        <span className={`lite-ev__stamp${loc.registrationOpen ? ' is-open' : ''}`}>
-          {loc.registration}
-        </span>
+        {loc.registrationOpen && (
+          <span className="lite-ev__stamp is-open">
+            {loc.registration}
+          </span>
+        )}
       </div>
     </div>
   )
