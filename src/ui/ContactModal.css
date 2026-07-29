@@ -1,0 +1,209 @@
+/* Contact Modal — Frosted Glassmorphic Overlay */
+
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(3, 6, 15, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem;
+  animation: contactModalFadeIn 0.3s ease-out;
+}
+
+@keyframes contactModalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.contact-modal__card {
+  position: relative;
+  width: min(520px, 94vw);
+  max-height: 88vh;
+  overflow-y: auto;
+  background: radial-gradient(130% 80% at 50% 0%, rgba(18, 28, 52, 0.92) 0%, rgba(7, 12, 24, 0.95) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 20px;
+  padding: clamp(1.4rem, 4vw, 2.2rem);
+  color: #eef3fb;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  scrollbar-width: none;
+}
+
+.contact-modal__card::-webkit-scrollbar {
+  display: none;
+}
+
+.contact-modal__close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #eef3fb;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.25s, border-color 0.25s, transform 0.2s;
+}
+
+.contact-modal__close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #f6ba82;
+  transform: scale(1.08);
+}
+
+.contact-modal__header {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(214, 228, 248, 0.14);
+}
+
+.contact-modal__tisb-logo {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+  transition: transform 0.25s;
+}
+
+.contact-modal__tisb-logo:hover {
+  transform: scale(1.05);
+}
+
+.contact-modal__tag {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.28em;
+  color: #f6ba82;
+  margin-bottom: 0.25rem;
+}
+
+.contact-modal__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.contact-modal__body {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.contact-modal__section {
+  text-align: left;
+}
+
+.contact-modal__label {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.26em;
+  color: rgba(214, 228, 248, 0.5);
+  margin-bottom: 0.6rem;
+  margin-top: 0;
+}
+
+.contact-modal__address {
+  font-family: var(--font-sans);
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: rgba(238, 243, 251, 0.88);
+  margin: 0 0 0.9rem;
+}
+
+.contact-modal__address strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.contact-modal__map-btn,
+.contact-modal__social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem 1.1rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(214, 228, 248, 0.18);
+  color: #eef3fb;
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  transition: background 0.25s, border-color 0.25s, transform 0.2s;
+}
+
+.contact-modal__map-btn:hover,
+.contact-modal__social-btn:hover {
+  background: rgba(246, 186, 130, 0.15);
+  border-color: #f6ba82;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.contact-modal__social-btn--insta:hover {
+  background: rgba(225, 48, 108, 0.18);
+  border-color: #e1306c;
+}
+
+.contact-modal__arrow {
+  font-size: 0.9rem;
+}
+
+.contact-modal__info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.contact-modal__info-title {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  color: rgba(214, 228, 248, 0.45);
+  margin-bottom: 0.3rem;
+}
+
+.contact-modal__link {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: #f6ba82;
+  text-decoration: none;
+  word-break: break-all;
+  transition: color 0.2s, text-decoration 0.2s;
+}
+
+.contact-modal__link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.contact-modal__socials {
+  display: grid;
+  gap: 0.7rem;
+}
+
+@media (max-width: 520px) {
+  .contact-modal__info-grid {
+    grid-template-columns: 1fr;
+  }
+}

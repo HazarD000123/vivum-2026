@@ -1,0 +1,294 @@
+/* Expedition instruments — quiet, fixed, never in the way. */
+
+.hud__top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem clamp(1.4rem, 4vw, 3rem);
+  z-index: 40;
+  pointer-events: none;
+}
+
+/* Brand lockup: the snow-leopard mark beside the wordmark. Rendered normally
+   (no screen blend) so the photographic logo keeps its colour and spots. */
+.hud__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  pointer-events: auto;
+}
+
+.hud__logo {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 45%;
+  flex: none;
+  box-shadow: 0 0 0 1px rgba(194, 236, 255, 0.22), 0 3px 14px rgba(0, 0, 0, 0.55);
+}
+
+.hud__wordmark {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+  color: #eef3fb;
+  text-shadow: 0 1px 10px rgba(4, 8, 16, 0.7);
+}
+
+.hud__brand-divider {
+  color: rgba(214, 228, 248, 0.3);
+  font-size: 0.85rem;
+  margin: 0 0.2rem;
+}
+
+.hud__tisb-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: rgba(238, 243, 251, 0.85);
+  transition: opacity 0.25s, transform 0.2s;
+}
+
+.hud__tisb-link:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.hud__tisb-logo {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 6px rgba(0, 0, 0, 0.5));
+}
+
+.hud__tisb-text {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  color: #f6ba82;
+}
+
+.hud__top-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  pointer-events: auto;
+  margin-right: 4.2rem;
+}
+
+.hud__social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: rgba(238, 243, 251, 0.85);
+  background: rgba(16, 26, 48, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(214, 228, 248, 0.2);
+  padding: 0.45rem 0.75rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: border-color 0.25s, background 0.25s, color 0.25s, transform 0.2s;
+}
+
+.hud__social-link:hover {
+  border-color: #e1306c;
+  color: #ffffff;
+  background: rgba(225, 48, 108, 0.2);
+  transform: translateY(-1px);
+}
+
+.hud__contact-btn {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #04070f;
+  background: #f6ba82;
+  border: 1px solid #f6ba82;
+  padding: 0.45rem 0.85rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+  box-shadow: 0 2px 10px rgba(246, 186, 130, 0.3);
+}
+
+.hud__contact-btn:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.4);
+}
+
+.hud__log {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.32em;
+  color: rgba(214, 228, 248, 0.5);
+}
+
+.hud__route {
+  position: fixed;
+  left: clamp(0.9rem, 2.4vw, 2rem);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 40;
+}
+
+.hud__track {
+  position: relative;
+  width: 1px;
+  height: 38vh;
+  background: rgba(214, 228, 248, 0.18);
+}
+
+.hud__track-fill {
+  position: absolute;
+  inset: 0;
+  background: rgba(214, 228, 248, 0.7);
+  transform-origin: top;
+}
+
+.hud__waypoint {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 1px solid rgba(214, 228, 248, 0.45);
+  background: transparent;
+  cursor: pointer;
+  pointer-events: auto;
+  padding: 0;
+  transition: background 0.4s, border-color 0.4s, box-shadow 0.4s;
+}
+
+.hud__waypoint.is-passed {
+  background: rgba(214, 228, 248, 0.8);
+  border-color: rgba(214, 228, 248, 0.8);
+}
+
+.hud__waypoint.is-active {
+  box-shadow: 0 0 10px rgba(194, 236, 255, 0.8);
+}
+
+.hud__waypoint:hover,
+.hud__waypoint:focus-visible {
+  background: rgba(214, 228, 248, 0.9);
+  border-color: rgba(214, 228, 248, 0.9);
+  outline: none;
+}
+
+/* The stage name, revealed beside the dot on hover/focus. */
+.hud__waypoint-label {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%) translateX(-4px);
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  white-space: nowrap;
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  color: #eef3fb;
+  background: rgba(6, 10, 20, 0.7);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  padding: 0.2rem 0.6rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.hud__waypoint:hover .hud__waypoint-label,
+.hud__waypoint:focus-visible .hud__waypoint-label {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+.hud__waypoint-alt {
+  font-family: var(--font-mono);
+  font-size: 0.54rem;
+  letter-spacing: 0.16em;
+  color: rgba(214, 228, 248, 0.5);
+}
+
+.hud__bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 1.1rem;
+  padding: 1.4rem clamp(1.4rem, 4vw, 3rem);
+  z-index: 40;
+  pointer-events: none;
+  text-shadow: 0 1px 10px rgba(4, 8, 16, 0.7);
+}
+
+.hud__alt {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  color: #eef3fb;
+  font-variant-numeric: tabular-nums;
+}
+
+.hud__stage {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.3em;
+  color: rgba(214, 228, 248, 0.5);
+}
+
+.hud__hint {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  z-index: 40;
+  pointer-events: none;
+}
+
+.hud__hint span:first-child {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.36em;
+  color: rgba(214, 228, 248, 0.65);
+}
+
+.hud__hint-line {
+  width: 1px;
+  height: 34px;
+  background: linear-gradient(to bottom, rgba(214, 228, 248, 0.7), transparent);
+  animation: hint-drop 2.2s ease-in-out infinite;
+}
+
+@keyframes hint-drop {
+  0% { transform: scaleY(0); transform-origin: top; opacity: 0; }
+  35% { transform: scaleY(1); transform-origin: top; opacity: 1; }
+  70%, 100% { transform: scaleY(1) translateY(10px); opacity: 0; }
+}
+
+@media (max-width: 640px) {
+  .hud__route { display: none; }
+  .hud__log { display: none; }
+}
