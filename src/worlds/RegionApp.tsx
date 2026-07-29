@@ -52,7 +52,7 @@ export default function RegionApp({ region, onReady }: { region: Region; onReady
 
   useEffect(() => {
     const prev = document.title
-    document.title = `VIVUM 2026 — ${region.worldName}`
+    document.title = `${region.name} — VIVUM 2026 | The International School Bangalore`
     return () => {
       document.title = prev
     }
