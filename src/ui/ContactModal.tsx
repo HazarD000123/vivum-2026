@@ -46,9 +46,9 @@ export default function ContactModal({ open, onClose }: { open: boolean; onClose
             <p className="contact-modal__address">
               <strong>The International School Bangalore</strong>
               <br />
-              NAFL Valley, Whitefield
+              NAFL Valley, Whitefield – Sarjapur Road
               <br />
-              Bangalore - 560066, Karnataka, India
+              Near Dommasandra Circle, Bengaluru - 562125, Karnataka, India
             </p>
             <a
               className="contact-modal__map-btn"

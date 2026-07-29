@@ -383,7 +383,7 @@ export default function LiteApp({ onReady }: { onReady?: () => void }) {
           <p>
             <strong>The International School Bangalore</strong>
             <br />
-            NAFL Valley, Whitefield, Bangalore - 560066, Karnataka
+            NAFL Valley, Whitefield – Sarjapur Road, Near Dommasandra Circle, Bengaluru - 562125, Karnataka, India
           </p>
           <div className="lite__contact-links">
             <a

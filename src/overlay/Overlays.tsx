@@ -336,7 +336,7 @@ export default function Overlays({ progress: p }: { progress: MotionValue<number
           </motion.div>
           <motion.div className="summit__links" style={{ opacity: footOp }}>
             <button className="summit__link" onClick={() => navigate('/sponsors')}>
-              Meet our sponsors →
+              <span>Meet our sponsors →</span>
             </button>
             <a
               className="summit__link summit__link--tisb"
@@ -345,7 +345,7 @@ export default function Overlays({ progress: p }: { progress: MotionValue<number
               rel="noopener noreferrer"
             >
               <img className="summit__tisb-img" src="/tisb-logo.png" alt="TISB Logo" />
-              <span>TISB Main Website (tisb.org) ↗</span>
+              <span>TISB Website (tisb.org) ↗</span>
             </a>
             <a
               className="summit__link summit__link--insta"
@@ -357,7 +357,7 @@ export default function Overlays({ progress: p }: { progress: MotionValue<number
             </a>
           </motion.div>
           <motion.p className="summit__foot" style={{ opacity: footOp }}>
-            The International School Bangalore · NAFL Valley, Whitefield, Bangalore - 560066
+            The International School Bangalore · NAFL Valley, Whitefield – Sarjapur Road, Near Dommasandra Circle, Bengaluru - 562125
           </motion.p>
           <motion.p className="summit__foot" style={{ opacity: footOp }}>
             In aid of the Sri Jayadeva Institute of Cardiovascular Sciences · 13 &amp; 14 August 2026

@@ -63,9 +63,9 @@ export default function ContactPage({ onReady }: { onReady?: () => void }) {
               <p className="cp-address">
                 <strong>The International School Bangalore</strong>
                 <br />
-                NAFL Valley, Whitefield
+                NAFL Valley, Whitefield – Sarjapur Road
                 <br />
-                Bangalore - 560066, Karnataka, India
+                Near Dommasandra Circle, Bengaluru - 562125, Karnataka, India
               </p>
               <a
                 className="cp-btn cp-btn--map"

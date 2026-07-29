@@ -106,7 +106,7 @@ export default function SponsorsPage({ onReady }: { onReady?: () => void }) {
           </div>
 
           <p className="sp-contact-box__address">
-            NAFL Valley, Whitefield, Bangalore - 560066, Karnataka, India
+            NAFL Valley, Whitefield – Sarjapur Road, Near Dommasandra Circle, Bengaluru - 562125, Karnataka, India
           </p>
 
           <div className="sp-contact-box__grid">
