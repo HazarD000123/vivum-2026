@@ -90,6 +90,7 @@ const SPORTS: Region = {
   protocol: {
     title: 'GROUND RULES — ALL SPORTS',
     items: [
+      'Age Category: Grade 12 and below.',
       'All teams follow the established rules and regulations to ensure fair competition.',
       'Punctuality is essential — teams arriving beyond a 15-minute grace period are disqualified.',
       'Protests must be submitted in writing to the organizing committee within 30 minutes of the game’s conclusion, with a fee of Rs. 1000/- (not refunded if the protest is ruled against).',
@@ -126,6 +127,7 @@ const SPORTS: Region = {
       date: DATES,
       venue: 'Basketball Court',
       rules: [
+        'Age Category: Grade 12 and below.',
         'Each team consists of 5 players on court and up to 7 substitutes.',
         'FIBA rules apply, with official match durations.',
         'Four quarters of 8 minutes running time (stop-clock in the final 2 minutes of the 4th quarter).',
@@ -149,6 +151,7 @@ const SPORTS: Region = {
       date: DATES,
       venue: 'Football Field & Turf Ground',
       rules: [
+        'Age Category: Grade 12 and below.',
         'FIFA rules, with a few exceptions.',
         '20-minute halves with a 5-minute half-time break.',
         'Knockout tournament.',
@@ -172,6 +175,7 @@ const SPORTS: Region = {
       date: DATES,
       venue: 'Volleyball Court',
       rules: [
+        'Age Category: Grade 12 and below.',
         'Each team fields six players on the court.',
         'Team strength: 12.',
         'Rally scoring — best of 3 games, 25 points each.',
@@ -193,6 +197,7 @@ const SPORTS: Region = {
       date: DATES,
       venue: 'Tennis Court',
       rules: [
+        'Age Category: Grade 12 and below.',
         'Knockout tournament.',
         '3 matches per round: First Singles, Doubles, Second Singles.',
         'Best of 7 games — at 3-all, the tie-breaker applies.',
@@ -215,6 +220,7 @@ const SPORTS: Region = {
       date: DATES,
       venue: 'Table Tennis Court',
       rules: [
+        'Age Category: Grade 12 and below.',
         'Knockout tournament.',
         'Best of 5 games, 11 points each.',
         '3 matches per round: First Singles, Doubles, Second Singles.',
@@ -237,6 +243,7 @@ const SPORTS: Region = {
       date: DATES,
       venue: 'Badminton Court',
       rules: [
+        'Age Category: Grade 12 and below.',
         'Team size: 4 members.',
         'Shuttlecock: Mavis 350 synthetic.',
         'Knockout tournament.',
@@ -260,6 +267,7 @@ const SPORTS: Region = {
       date: DATES,
       venue: 'Volleyball Court',
       rules: [
+        'Age Category: Grade 12 and below.',
         'Knockout tournament.',
         'Best of 3 games, 15 points each.',
         'Held on the basis of TAI rules.',
@@ -281,6 +289,7 @@ const SPORTS: Region = {
       date: DATES,
       venue: 'Hockey Field',
       rules: [
+        'Age Category: Grade 12 and below.',
         'Rolling substitutions can be made.',
         'Match duration: 45 minutes (20–5–20).',
         'Team strength: 11-a-side with 5 substitutes.',
