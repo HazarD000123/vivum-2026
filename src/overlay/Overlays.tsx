@@ -30,9 +30,10 @@ function Layer({
   children: ReactNode
 }) {
   const { opacity, y } = useBand(progress, band)
+  const display = useTransform(opacity, (v) => (v > 0.001 ? 'grid' : 'none'))
   const pointerEvents = useTransform(opacity, (v) => (interactive && v > 0.5 ? 'auto' : 'none'))
   return (
-    <motion.div className={`ovl ovl--${align}`} style={{ opacity, pointerEvents }}>
+    <motion.div className={`ovl ovl--${align}`} style={{ display, opacity, pointerEvents }}>
       <motion.div className="ovl__inner" style={{ y }}>
         {children}
       </motion.div>
@@ -152,8 +153,9 @@ export default function Overlays({ progress: p }: { progress: MotionValue<number
   // The summit resolves to fully solid quickly (by p≈0.915) and then STAYS
   // solid for the rest of the scroll — no long, faint fade-in that leaves the
   // text and buttons half-visible while you're reading them.
-  const heroOpacity = useTransform(p, [0.0, 0.025, 0.05], [1, 1, 0])
-  const heroY = useTransform(p, [0.0, 0.025, 0.05], [0, 0, -40])
+  const heroDisplay = useTransform(p, (v) => (v < 0.04 ? 'grid' : 'none'))
+  const heroOpacity = useTransform(p, [0.0, 0.018, 0.038], [1, 1, 0])
+  const heroY = useTransform(p, [0.0, 0.018, 0.038], [0, 0, -40])
   const heroPointer = useTransform(heroOpacity, (v) => (v > 0.5 ? 'auto' : 'none'))
 
   const summitOpacity = useTransform(p, [0.875, 0.895], [0, 1])
@@ -165,8 +167,8 @@ export default function Overlays({ progress: p }: { progress: MotionValue<number
 
   return (
     <>
-      {/* STAGE 0 — LANDING / HERO VIVUM LOGO (Solid 100% on immediate load) */}
-      <motion.div className="ovl ovl--center" style={{ opacity: heroOpacity, pointerEvents: heroPointer }}>
+      {/* STAGE 0 — LANDING / HERO VIVUM LOGO (Solid 100% on immediate load, hidden on scroll) */}
+      <motion.div className="ovl ovl--center" style={{ display: heroDisplay, opacity: heroOpacity, pointerEvents: heroPointer }}>
         <motion.div className="ovl__inner" style={{ y: heroY }}>
           <div className="hero-landing">
             <div className="hero-landing__emblem">
