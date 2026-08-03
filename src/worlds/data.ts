@@ -442,6 +442,12 @@ const RADIOSHACK: Region = {
   intro:
     'Beyond the main arenas lie the RadioShack Activities — a dynamic circuit of individual challenges, trivia, freestyle raps, lip syncs, and dance battles. Test your reflexes, speed, and creative edge.',
   enterLabel: 'ENTER RADIOSHACK ACTIVITIES',
+  links: [
+    {
+      label: 'RadioShack Registration Form',
+      url: 'https://forms.cloud.microsoft/r/CPULku1c9D',
+    },
+  ],
   theme: {
     skyTop: '#040a1b',
     skyHorizon: '#23324a',
@@ -473,8 +479,8 @@ const RADIOSHACK: Region = {
         'Participation: Individual',
         'Important information: Ensure you are dressed in comfortable attire, including proper footwear.',
       ],
-      registration: SOON,
-      registrationOpen: false,
+      registration: 'https://forms.cloud.microsoft/r/CPULku1c9D',
+      registrationOpen: true,
     },
     {
       id: 'pause-and-play',
@@ -491,8 +497,8 @@ const RADIOSHACK: Region = {
         'Participation: Individual',
         'Important information: You get 30 seconds to finish the missing song lyrics on the spot and are only allowed 1 hint. Participants with the greatest number of correct answers are declared the winners.',
       ],
-      registration: SOON,
-      registrationOpen: false,
+      registration: 'https://forms.cloud.microsoft/r/CPULku1c9D',
+      registrationOpen: true,
     },
     {
       id: 'trojan-trivia',
@@ -509,8 +515,8 @@ const RADIOSHACK: Region = {
         'Participation: Teams of 3 – 4 members',
         'Important information: One person from each group of 3 or 4 should sign up.',
       ],
-      registration: SOON,
-      registrationOpen: false,
+      registration: 'https://forms.cloud.microsoft/r/CPULku1c9D',
+      registrationOpen: true,
     },
     {
       id: 'defeat-the-dragon-warrior',
@@ -527,8 +533,8 @@ const RADIOSHACK: Region = {
         'Participation: Individual',
         'Important information: Ensure you are dressed in comfortable attire, including proper footwear.',
       ],
-      registration: SOON,
-      registrationOpen: false,
+      registration: 'https://forms.cloud.microsoft/r/CPULku1c9D',
+      registrationOpen: true,
     },
     {
       id: 'lip-sync',
@@ -545,8 +551,8 @@ const RADIOSHACK: Region = {
         'Participation: Individual / Teams of 2 members',
         'Important information: You can submit a song of your choice or choose one on the spot. Your performance will be judged on creativity and crowd engagement. One person from each team of 2 must sign up.',
       ],
-      registration: SOON,
-      registrationOpen: false,
+      registration: 'https://forms.cloud.microsoft/r/CPULku1c9D',
+      registrationOpen: true,
     },
     {
       id: 'rap-battle',
@@ -563,8 +569,8 @@ const RADIOSHACK: Region = {
         'Participation: Individual',
         'Important information: Your performance will be judged on your adaptability, level of freestyle, and crowd engagement.',
       ],
-      registration: SOON,
-      registrationOpen: false,
+      registration: 'https://forms.cloud.microsoft/r/CPULku1c9D',
+      registrationOpen: true,
     },
     {
       id: 'beat-blitz',
@@ -581,8 +587,8 @@ const RADIOSHACK: Region = {
         'Participation: Teams of 5-6 members',
         'Important information: You will be judged on entertainment value, creativity and crowd engagement with 90 seconds per performance. Pre-prepared routines, including props or dangerous stunts, are not allowed. One person from each team should sign up.',
       ],
-      registration: SOON,
-      registrationOpen: false,
+      registration: 'https://forms.cloud.microsoft/r/CPULku1c9D',
+      registrationOpen: true,
     },
   ],
 }

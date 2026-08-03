@@ -116,6 +116,18 @@ body.menu-is-open .hud__top-actions {
   transform: translateY(-1px);
 }
 
+.hud__dev-link {
+  border-color: rgba(255, 190, 130, 0.35);
+  color: #ffcf9c;
+}
+
+.hud__dev-link:hover {
+  border-color: #ffb86c;
+  color: #ffffff;
+  background: rgba(255, 170, 100, 0.25);
+  transform: translateY(-1px);
+}
+
 .hud__contact-btn {
   font-family: var(--font-mono);
   font-size: 0.6rem;

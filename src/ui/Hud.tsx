@@ -59,6 +59,15 @@ export default function Hud({ progress }: { progress: MotionValue<number> }) {
             </svg>
             <span className="hud__social-text">@vivum_26</span>
           </a>
+          <a
+            className="hud__social-link hud__dev-link"
+            href="https://www.instagram.com/jyo3g/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Website Created & Designed by Jyotir (@jyo3g)"
+          >
+            <span className="hud__social-text">Built by @jyo3g ↗</span>
+          </a>
           <button className="hud__contact-btn" onClick={() => navigate('contact')}>
             Contact Us
           </button>

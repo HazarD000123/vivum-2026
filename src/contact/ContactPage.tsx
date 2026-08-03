@@ -119,6 +119,22 @@ export default function ContactPage({ onReady }: { onReady?: () => void }) {
                 </a>
               </div>
             </div>
+
+            <div className="cp-section">
+              <h2 className="cp-label">WEBSITE CREATOR &amp; DESIGNER</h2>
+              <div className="cp-socials">
+                <a
+                  className="cp-btn"
+                  style={{ borderColor: 'rgba(255, 195, 135, 0.45)', color: '#ffcf9c' }}
+                  href="https://www.instagram.com/jyo3g/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>💻 Designed &amp; Developed by Jyotir (@jyo3g)</span>
+                  <span className="cp-arrow">↗</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 

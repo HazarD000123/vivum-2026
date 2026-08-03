@@ -428,6 +428,12 @@ export default function LiteApp({ onReady }: { onReady?: () => void }) {
           </a>
         </p>
         <p>© 2026 Vivum, TISB · The International School Bangalore</p>
+        <p style={{ marginTop: '0.4rem', color: '#ffcf9c' }}>
+          Website Created &amp; Designed by{' '}
+          <a className="lite__foot-link" href="https://www.instagram.com/jyo3g/" target="_blank" rel="noopener noreferrer" style={{ color: '#ffcf9c', fontWeight: 600 }}>
+            Jyotir (@jyo3g)
+          </a>
+        </p>
       </footer>
 
       <EventModal loc={active} onClose={() => setActive(null)} />

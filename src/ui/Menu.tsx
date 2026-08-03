@@ -60,6 +60,20 @@ export default function Menu() {
         aria-label="Expedition map"
         aria-hidden={!open}
       >
+        <a
+          className="menu__dev-banner"
+          href="https://www.instagram.com/jyo3g/"
+          target="_blank"
+          rel="noopener noreferrer"
+          tabIndex={open ? 0 : -1}
+          title="Website Created & Designed by Jyotir (@jyo3g)"
+        >
+          <span className="menu__dev-banner-tag">WEBSITE CREATOR &amp; DESIGNER</span>
+          <span className="menu__dev-banner-name">
+            Jyotir (@jyo3g) ↗
+          </span>
+        </a>
+
         <div className="menu__tisb-brand">
           <a href="https://tisb.org/" target="_blank" rel="noopener noreferrer" className="menu__tisb-anchor">
             <img className="menu__tisb-img" src="/tisb-logo.png" alt="TISB Logo" />

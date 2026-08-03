@@ -164,6 +164,11 @@ export default function SponsorsPage({ onReady }: { onReady?: () => void }) {
           <a className="sp-foot__link" href="tel:+918067235900">
             +91 80 6723 5900
           </a>
+          <br />
+          Website Created &amp; Designed by{' '}
+          <a className="sp-foot__link" href="https://www.instagram.com/jyo3g/" target="_blank" rel="noopener noreferrer" style={{ color: '#ffcf9c', fontWeight: 600 }}>
+            Jyotir (@jyo3g)
+          </a>
         </p>
       </main>
     </div>

@@ -161,8 +161,20 @@ export default function Overlays({ progress: p }: { progress: MotionValue<number
 
   return (
     <>
+      {/* STAGE 0 — LANDING / HERO VIVUM LOGO */}
+      <Layer progress={p} band={[0.0, 0.0, 0.022, 0.042]} align="center">
+        <div className="hero-landing">
+          <div className="hero-landing__emblem">
+            <img className="hero-landing__logo-img" src="/leopard-mark.png" alt="Vivum Logo" />
+          </div>
+          <h1 className="hero-landing__title">VIVUM 2026</h1>
+          <p className="hero-landing__tag">THE INTERNATIONAL SCHOOL BANGALORE</p>
+          <p className="hero-landing__sub">The Annual Flagship Inter-School Festival</p>
+        </div>
+      </Layer>
+
       {/* STAGE 1 — THE ARRIVAL */}
-      <Layer progress={p} band={[0.012, 0.04, 0.062, 0.095]} align="center">
+      <Layer progress={p} band={[0.046, 0.075, 0.095, 0.115]} align="center">
         <p className="tag">EXPEDITION LOG — ENTRY 01 · NIGHTFALL</p>
         <h1 className="arrival__title">The Ascent</h1>
         <p className="arrival__slogan">Conquer the Peaks</p>
@@ -300,6 +312,16 @@ export default function Overlays({ progress: p }: { progress: MotionValue<number
           <p className="checkpoint__desc">
             RadioShack Activities — test your strength, trivia, freestyle raps, lip syncs, and dance battles.
           </p>
+          <div className="checkpoint__links">
+            <a
+              className="checkpoint__link"
+              href="https://forms.cloud.microsoft/r/CPULku1c9D"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Registration Form ↗
+            </a>
+          </div>
           <button className="checkpoint__enter" onClick={() => navigate('/radioshack')}>
             {REGIONS.radioshack.enterLabel} →
           </button>
@@ -372,6 +394,12 @@ export default function Overlays({ progress: p }: { progress: MotionValue<number
               vivum26@tisb.ac.in
             </a>
             &nbsp;· © 2026 Vivum, TISB
+          </motion.p>
+          <motion.p className="summit__foot" style={{ opacity: footOp, marginTop: '0.4rem', color: '#ffcf9c' }}>
+            Website Created &amp; Designed by{' '}
+            <a className="summit__contact-link" href="https://www.instagram.com/jyo3g/" target="_blank" rel="noopener noreferrer" style={{ color: '#ffcf9c', fontWeight: 600 }}>
+              Jyotir (@jyo3g)
+            </a>
           </motion.p>
         </div>
       </motion.div>
