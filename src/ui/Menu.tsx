@@ -151,21 +151,6 @@ export default function Menu() {
             Switch to lite version
           </button>
         </div>
-
-        <a
-          className="menu__credit"
-          href="https://instagram.com/jyo3g"
-          target="_blank"
-          rel="noopener noreferrer"
-          tabIndex={open ? 0 : -1}
-        >
-          <span>Made by @jyo3g</span>
-          <svg viewBox="0 0 24 24" aria-hidden focusable="false">
-            <rect x="2" y="2" width="20" height="20" rx="5.5" />
-            <circle cx="12" cy="12" r="4.2" />
-            <circle cx="17.6" cy="6.4" r="1.2" className="menu__credit-dot" />
-          </svg>
-        </a>
       </nav>
     </div>
   )

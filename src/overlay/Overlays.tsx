@@ -152,6 +152,10 @@ export default function Overlays({ progress: p }: { progress: MotionValue<number
   // The summit resolves to fully solid quickly (by p≈0.915) and then STAYS
   // solid for the rest of the scroll — no long, faint fade-in that leaves the
   // text and buttons half-visible while you're reading them.
+  const heroOpacity = useTransform(p, [0.0, 0.025, 0.05], [1, 1, 0])
+  const heroY = useTransform(p, [0.0, 0.025, 0.05], [0, 0, -40])
+  const heroPointer = useTransform(heroOpacity, (v) => (v > 0.5 ? 'auto' : 'none'))
+
   const summitOpacity = useTransform(p, [0.875, 0.895], [0, 1])
   const summitPointer = useTransform(summitOpacity, (v) => (v > 0.5 ? 'auto' : 'none'))
 
@@ -161,17 +165,19 @@ export default function Overlays({ progress: p }: { progress: MotionValue<number
 
   return (
     <>
-      {/* STAGE 0 — LANDING / HERO VIVUM LOGO */}
-      <Layer progress={p} band={[0.0, 0.0, 0.022, 0.042]} align="center">
-        <div className="hero-landing">
-          <div className="hero-landing__emblem">
-            <img className="hero-landing__logo-img" src="/leopard-mark.png" alt="Vivum Logo" />
+      {/* STAGE 0 — LANDING / HERO VIVUM LOGO (Solid 100% on immediate load) */}
+      <motion.div className="ovl ovl--center" style={{ opacity: heroOpacity, pointerEvents: heroPointer }}>
+        <motion.div className="ovl__inner" style={{ y: heroY }}>
+          <div className="hero-landing">
+            <div className="hero-landing__emblem">
+              <img className="hero-landing__logo-img" src="/leopard-mark-circle.png" alt="Vivum Logo" />
+            </div>
+            <h1 className="hero-landing__title">VIVUM 2026</h1>
+            <p className="hero-landing__tag">THE INTERNATIONAL SCHOOL BANGALORE</p>
+            <p className="hero-landing__sub">The Annual Flagship Inter-School Festival</p>
           </div>
-          <h1 className="hero-landing__title">VIVUM 2026</h1>
-          <p className="hero-landing__tag">THE INTERNATIONAL SCHOOL BANGALORE</p>
-          <p className="hero-landing__sub">The Annual Flagship Inter-School Festival</p>
-        </div>
-      </Layer>
+        </motion.div>
+      </motion.div>
 
       {/* STAGE 1 — THE ARRIVAL */}
       <Layer progress={p} band={[0.046, 0.075, 0.095, 0.115]} align="center">
