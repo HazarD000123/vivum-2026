@@ -3,6 +3,7 @@ import type { CSSProperties, ReactNode } from 'react'
 import { REGIONS, type RegionLocation } from '../worlds/data'
 import { useCountdown } from '../festival'
 import { setLitePreference } from './liteMode'
+import SponsorBanner from '../ui/SponsorBanner'
 import './LiteApp.css'
 
 const REGION_ORDER = ['sports', 'cultural', 'radioshack'] as const
@@ -437,6 +438,7 @@ export default function LiteApp({ onReady }: { onReady?: () => void }) {
       </footer>
 
       <EventModal loc={active} onClose={() => setActive(null)} />
+      <SponsorBanner />
     </div>
   )
 }

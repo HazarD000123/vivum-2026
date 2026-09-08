@@ -6,6 +6,7 @@ import Menu from './Menu'
 import './Hud.css'
 
 import ContactModal from './ContactModal'
+import SponsorBanner from './SponsorBanner'
 
 const formatAlt = (m: number) => `${m.toLocaleString('en-IN').replace(/,/g, ' ')} M`
 
@@ -77,6 +78,7 @@ export default function Hud({ progress }: { progress: MotionValue<number> }) {
       <Menu />
 
       <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
+      <SponsorBanner />
 
       <aside className="hud__route">
         <div className="hud__track">
